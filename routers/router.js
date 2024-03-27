@@ -14,7 +14,7 @@ router.post('/register', reigisterUser)
 router.post('/login', loginUser)
 router.post('/resetPasswordLink', resetPasswordLink)
 router.put('/resetPassword/:token', resetPassword)
-
+ 
 
 
 

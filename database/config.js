@@ -5,7 +5,7 @@ dotenv.config()
 const mongoconnection=process.env.MONGOCONNECTION;
 
 export const connectDB=async()=>{
-    try {
+    try { 
         const dbconnect=await mongoose.connect(mongoconnection)
         console.log('db onnected successfully');
     } catch (error) {

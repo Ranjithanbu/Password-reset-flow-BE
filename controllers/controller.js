@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import dotenv from 'dotenv'
 import { transporter } from "../nodeMailer.js";
 dotenv.config()
-
+ 
 //to handle newly registering user & saving to Database
 
 export const reigisterUser = async (req, res) => {

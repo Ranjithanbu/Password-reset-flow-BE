@@ -8,7 +8,7 @@ const registerSchema=new mongoose.Schema({
     password:String,
     token:String
 })
-
+ 
 
 
 export const register=mongoose.model('register',registerSchema)

@@ -9,4 +9,4 @@ export const transporter=nodemailer.createTransport({
         user:process.env.mailId,
         pass:process.env.email_password
 }
-})
+}) 
