@@ -11,7 +11,9 @@ const app=Express()
 app.use(cors())
 app.use(Express.json())
 connectDB()
-
+app.get('/',(req,res)=>{
+    res.status(200).json({message:'site is working'})
+})
 app.use('/api',Mainrouter)
 const port=process.env.PORT
 app.listen(port,()=>{
