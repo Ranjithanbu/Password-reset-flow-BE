@@ -5,8 +5,8 @@ dotenv.config()
  const transport=nodemailer.createTransport({
     service:'gmail',
     auth:{
-        user:'pauliinivin@gmail.com',
-        pass:984212345
+        user:'ranjithjithg@gmail.com',
+        pass:'lian dmlq ones gzjr'
     }
 })
 
