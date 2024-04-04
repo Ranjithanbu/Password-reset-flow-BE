@@ -71,10 +71,10 @@ export const resetPasswordLink = async (req, res) => {
         if (checkUser) {
 
 transport.sendMail(mailDetails, (err) => {
-                if (err) { console.log(err) }
-                else (console.log('mail sent successfully'))
+                if (err) {res.status(500).json({message:err}) }
+                else ( res.status(200).json({ message: 'reset password link has been sent your registered mail ', token: neededData }))
             })
-            res.status(200).json({ message: 'reset password link has been sent your registered mail ', token: neededData })
+           
         }
         else {
             res.status(401).json({ message: 'email not found' })
