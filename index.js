@@ -16,6 +16,7 @@ app.get('/',(req,res)=>{
 })
 app.use('/api',Mainrouter)
 const port=process.env.PORT
+console.log(port);
 app.listen(port,()=>{
     console.log("app is listening on the port",port);
 })  

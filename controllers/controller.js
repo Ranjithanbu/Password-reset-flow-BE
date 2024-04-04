@@ -2,7 +2,7 @@ import { register } from "../models/shchemas.js";
 import bcrypt from 'bcryptjs'
 import jwt from "jsonwebtoken";
 import dotenv from 'dotenv'
-import { transporter } from "../nodeMailer.js";
+import transport from "../nodeMailer.js";
 dotenv.config()
  
 //to handle newly registering user & saving to Database
@@ -59,7 +59,7 @@ export const resetPasswordLink = async (req, res) => {
         checkUser.token = token
 
         await checkUser.save()
-        const neededData = `http://localhost:5173/reset-password-page/${checkUser._id}/${token}`
+        const neededData = `https://amazing-brigadeiros-3a908e.netlify.app/reset-password-page/${checkUser._id}/${token}`
         const mailDetails = {
 
             from:process.env.mailId,
@@ -70,8 +70,8 @@ export const resetPasswordLink = async (req, res) => {
 
         if (checkUser) {
 
-            transporter.sendMail(mailDetails, (err) => {
-                if (err) { console.log('send mail error') }
+transport.sendMail(mailDetails, (err) => {
+                if (err) { console.log(err) }
                 else (console.log('mail sent successfully'))
             })
             res.status(200).json({ message: 'reset password link has been sent your registered mail ', token: neededData })
